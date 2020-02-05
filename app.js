@@ -20,6 +20,12 @@ var requestHandler = function(request, response){
 		response.end();
 
 	}
+	else if (request.url == '/home') {
+		var data = fs.readFileSync('home.html');
+		response.write(data.toString());
+		response.end();
+
+	}
 	else{
 		response.write("Don't play with me");
 		response.end();
